@@ -1,0 +1,14 @@
+#!/bin/bash -x
+echo " READ THE length : "
+read  L
+echo "READ THE BREADTH : "
+read b
+a=$(( $L * $b ))
+echo "area of plot in feet : "$a
+fttometer=0.0929
+meter=$(awk 'BEGIN {print '$a' * '$fttometer' * '25' }')
+echo "area of 25 plot in meter : "$meter
+sqmetertoacre=0.000247105
+acre=$(awk 'BEGIN {print '$meter' * '$sqmetertoacre' }')
+echo "area of 25 plots in acres: " $acre
+
